@@ -5,6 +5,7 @@ charset-normalizer==3.4.0
 click==8.1.7
 dnspython==2.6.1
 flask==3.0.3
+Flask-Login==0.6.3
 Flask-PyMongo==2.3.0
 gunicorn==23.0.0
 idna==3.10
