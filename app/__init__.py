@@ -31,7 +31,7 @@ def token_required(f):
 def home():
     return render_template('login.html')
 
-@app.route('/login_signup', methods=['GET', 'POST'])
+@app.route('/login_signup.html', methods=['GET', 'POST'])
 def register():
     if request.method == 'POST':
         data = request.form
@@ -56,7 +56,7 @@ def register():
 
     return render_template('register.html')
 
-@app.route('/login_signup', methods=['GET', 'POST'])
+@app.route('/login_signup.html', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
         data = request.form
