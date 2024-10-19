@@ -37,7 +37,7 @@ def load_user(user_id):
 # Root route
 @app.route('/')
 def home():
-    return redirect(url_for('job_listings'))
+    return redirect(url_for('job_listings.html'))
 
 # Signup route
 @app.route('/signup', methods=['GET', 'POST'])
