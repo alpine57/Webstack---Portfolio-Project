@@ -11,12 +11,11 @@
         <strong>{{ job.title }}</strong> - {{ job.company }}<br>
         Location: {{ job.location }} | Salary: {{ job.salary }}<br>
         {{ job.description }}<br>
-        <a href="/apply/{{ job.id }}">Apply</a>
+        <!-- Apply form using POST method -->
+        <form action="/apply/{{ job.id }}" method="post">
+            <button type="submit">Apply</button>
+        </form>
     </li>
     {% endfor %}
 </ul>
 
-#apply button
-<form action="/apply/{{ job.id }}" method="post">
-    <button type="submit">Apply</button>
-</form>
