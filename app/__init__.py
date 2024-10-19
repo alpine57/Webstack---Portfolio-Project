@@ -100,7 +100,7 @@ def job_listings():
         query['category__icontains'] = category
 
     jobs = JobPost.objects(**query)
-    return render_template('job_listings.html', jobs=jobs,  user=current_user)
+    return render_template('test.html', jobs=jobs,  user=current_user)
 
 # Creating Application model
 class Application(Document):
