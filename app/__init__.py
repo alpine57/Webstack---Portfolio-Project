@@ -34,6 +34,11 @@ class User(Document, UserMixin):
 def load_user(user_id):
     return User.objects(pk=user_id).first()
 
+# Root route
+@app.route('/')
+def home():
+    return redirect(url_for('job_listings'))
+
 # Signup route
 @app.route('/signup', methods=['GET', 'POST'])
 def signup():
@@ -75,16 +80,16 @@ class JobPost(Document):
 # Job listings route
 @app.route('/jobs')
 def job_listings():
-    post_job =JobPost (
-    title = "Junior Dev",
-    company = "Limpopo Connexion",
-    location = "Johannesburg",
-    category = "Technical",
-    description = "Assist Teams with developing softwares and mobile apps",
-    salary = ('5000')
-
+    post_job = JobPost(
+        title="Junior Dev",
+        company="Limpopo Connexion",
+        location="Johannesburg",
+        category="Technical",
+        description="Assist Teams with developing softwares and mobile apps",
+        salary=5000
     )
     post_job.save()
+    
     location = request.args.get('location')
     category = request.args.get('category')
 
@@ -156,3 +161,4 @@ def course_detail(course_id):
 
 if __name__ == "__main__":
     app.run(debug=True)
+
