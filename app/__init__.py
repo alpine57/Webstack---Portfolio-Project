@@ -8,8 +8,10 @@ app = Flask(__name__)
 login_manager = LoginManager(app)
 app.secret_key = 'supersecretkey'
 
-# Connecting to MongoDB Atlas
-connect(db="jobhub_db", host="mongodb+srv://itumeleng:Itumeleng1.@cluster0.3klnl.mongodb.net/")
+@app.before_first_request
+def initialize_db():
+    connect(db="jobhub_db", host="mongodb+srv://itumeleng:Itumeleng1.@cluster0.3klnl.mongodb.net/")
+
 
 # Creating User model for storing data in MongoDB
 class User(Document, UserMixin):
@@ -100,7 +102,7 @@ def job_listings():
         query['category__icontains'] = category
 
     jobs = JobPost.objects(**query)
-    return render_template('test.html', jobs=jobs,  user=current_user)
+    return render_template('job_listings.html', jobs=jobs,  user=current_user)
 
 # Creating Application model
 class Application(Document):
