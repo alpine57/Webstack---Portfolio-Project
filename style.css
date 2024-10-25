@@ -147,13 +147,13 @@ body {
     }
 
 section #header-text {
-  padding: 20px;
-  background-color: #e6f0f1; 
-  overflow: hidden;
-  height: 100vh;
-  border-radius: 0 0 500px 0;
-  word-wrap: break-word;
-  overflow: hidden;
+      padding: 20px;
+      background-color: #e6f0f1; 
+      overflow: hidden;
+      height: 100vh;
+      border-radius: 0 0 500px 0;
+      word-wrap: break-word;
+      overflow: hidden;
 }
 
 section #textBox h1 {
@@ -482,15 +482,15 @@ section #image_box .image-container img {
 .row #profile_nav {
  position: relative;
  border: 2px solid ;
+ padding: 0;
+ height: 100vh;
 }
 
 .row #profile_nav .navigate{
   height: 100%; 
-  width: 160px; 
-  position: fixed; 
+  width: 100%; 
+  position: relative; 
   z-index: 1; 
-  top: 0; 
-  left: 0;
   background-color: #111;
   overflow-x: hidden; 
   padding-top: 20px;
@@ -508,24 +508,24 @@ section #image_box .image-container img {
   position: relative;
 }
 
-.row #profile_content .jobs_cards{
+.row #profile_content #jobs_cards{
   position: relative;
-  margin-left: 160px; 
-  padding: 0px 10px
-  display:flex;
+  margin: 10px; 
+  padding: 0px 10px;
 }
 
- .row #profile_content .jobs_cards .card_j{   /***CARDS** */
+ .row #profile_content #jobs_cards .card_j{   /***CARDS** */
   position: relative;
   border: 0.5px solid wheat;
   padding: 0;
-  width: 280px;
+  width: 270px;
   height: auto;
   text-align: center;
   border-radius: 20px;
+  margin: 10px;
 }
 
-.row #profile_content .jobs_cards .card_j .title{ 
+.row #profile_content #jobs_cards .card_j .title{ 
   border-radius: 20px 20px 0 0;
   padding: 10px;
   position: relative;
@@ -703,6 +703,37 @@ a.active, a:hover {
 
 /********** Extra small devices only **********/
 @media (max-width: 767px) {
+  /* ***********profile.html navigation bar******** */
+  .row #profile_nav {
+    position: relative;
+    padding: 0;
+    height: 15vh;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+   }
+
+   .row #profile_nav .navigate  {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #818181;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    background-color: #8da4a7;
+
+  }
+
+  .row #profile_nav .navigate  ul {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+
+  }
 
   /* LOGO */
 
