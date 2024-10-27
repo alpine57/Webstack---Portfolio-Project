@@ -7,7 +7,7 @@ from datetime import datetime
 
 @app.route('/')
 def home():
-    return render_template('index.html')
+    return render_template('index1.html')
 # Signup route
 @app.route('/signup', methods=['GET', 'POST'])
 def signup():
