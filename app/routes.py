@@ -1,0 +1,90 @@
+# routes.py
+from flask import render_template, request, redirect, url_for, flash
+from flask_login import login_user, logout_user, current_user, login_required
+from . import app
+from .models import User, JobPost, Application, Course, UserCourseProgress
+from datetime import datetime
+
+# Signup route
+@app.route('/signup', methods=['GET', 'POST'])
+def signup():
+    if request.method == 'POST':
+        data = request.form
+        user = User(username=data['username'], email=data['email'])
+        user.set_password(data['password'])
+        user.save()
+        login_user(user)
+        return redirect(url_for('profile'))
+    return render_template('signup.html', user=current_user)
+
+# Login route
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    if request.method == 'POST':
+        user = User.objects(email=request.form['email']).first()
+        if user and user.check_password(request.form['password']):
+            login_user(user)
+            return redirect(url_for('profile'))
+        flash("Invalid login details.")
+    return render_template('login.html', user=current_user)
+
+# Profile route
+@app.route('/profile')
+@login_required
+def profile():
+    return render_template('profile.html', user=current_user)
+
+# Job listings route
+@app.route('/jobs')
+def job_listings():
+    location = request.args.get('location')
+    category = request.args.get('category')
+
+    query = {}
+    if location:
+        query['location__icontains'] = location
+    if category:
+        query['category__icontains'] = category
+
+    jobs = JobPost.objects(**query)
+    return render_template('job_listings.html', jobs=jobs, user=current_user)
+
+# Apply job route
+@app.route('/apply/<job_id>', methods=['POST'])
+@login_required
+def apply_job(job_id):
+    job = JobPost.objects(id=job_id).first()
+    if job:
+        application = Application(user=current_user, job=job)
+        application.save()
+        return redirect(url_for('job_listings'))
+    return 'Job not found', 404
+
+# Mentorship route
+@app.route('/mentors')
+def mentors():
+    mentors = User.objects(is_mentor=True)
+    return render_template('mentors.html', mentors=mentors, user=current_user)
+
+# Courses route
+@app.route('/courses')
+def courses():
+    # Creating Courses document
+    course = Course(
+        title="Software Engineer - Front-end",
+        description="This course provides you with the knowledge and exposes you to tools you can use to develop websites effectively.",
+        duration=5
+    )
+    course.save()
+
+    courses = Course.objects()
+    return render_template('courses.html', courses=courses, user=current_user)
+
+# Route to get specific course by id
+@app.route('/course/<course_id>')
+@login_required
+def course_detail(course_id):
+    course = Course.objects(id=course_id).first()
+    progress = UserCourseProgress.objects(user=current_user, course=course).first()
+    return render_template('course_detail.html', course=course, progress=progress, user=current_user)
+
