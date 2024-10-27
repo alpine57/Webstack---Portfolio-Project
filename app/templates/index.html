@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JobHub - Home</title>
+</head>
+<body>
+    <h1>Welcome to JobHub!</h1>
+    <p>This is the home page where you can browse jobs, mentors, and courses.</p>
+    <nav>
+        <a href="{{ url_for('job_listings') }}">Job Listings</a> |
+        <a href="{{ url_for('signup') }}">Sign Up</a> |
+        <a href="{{ url_for('login') }}">Login</a> |
+        <a href="{{ url_for('mentors') }}">Mentors</a> |
+        <a href="{{ url_for('courses') }}">Courses</a>
+    </nav>
+</body>
+</html>
+
