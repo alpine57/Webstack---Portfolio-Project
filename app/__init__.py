@@ -4,13 +4,17 @@ from mongoengine import connect, StringField, BooleanField, EmailField, Document
 from werkzeug.security import generate_password_hash, check_password_hash
 from datetime import datetime
 
-app = Flask(__name__)
+# Initialize Flask app with correct template folder path
+app = Flask(__name__, template_folder='app/templates')
 login_manager = LoginManager(app)
 app.secret_key = 'supersecretkey'
 
-# Move MongoDB connection initialization here
+# MongoDB connection setup
 def get_db_connection():
-    connect(db="jobhub_db", host="mongodb+srv://itumeleng:Itumeleng1.@cluster0.3klnl.mongodb.net/")
+    try:
+        connect(db="jobhub_db", host="mongodb+srv://itumeleng:Itumeleng1.@cluster0.3klnl.mongodb.net/")
+    except Exception as e:
+        print(f"Database connection failed: {e}")
 
 # User model
 class User(Document, UserMixin):
@@ -38,13 +42,13 @@ def load_user(user_id):
 # Root route
 @app.route('/')
 def home():
-    return redirect(url_for('job_listings'))
+    return render_template('index.html')  # Renders the homepage template
 
 # Signup route
 @app.route('/signup', methods=['GET', 'POST'])
 def signup():
     if request.method == 'POST':
-        get_db_connection()  # Ensure connection is established before saving to the database
+        get_db_connection()
         data = request.form
         user = User(username=data['username'], email=data['email'])
         user.set_password(data['password'])
@@ -57,7 +61,7 @@ def signup():
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
-        get_db_connection()  # Ensure connection is established
+        get_db_connection()
         user = User.objects(email=request.form['email']).first()
         if user and user.check_password(request.form['password']):
             login_user(user)
@@ -69,7 +73,7 @@ def login():
 @app.route('/profile')
 @login_required
 def profile():
-    get_db_connection()  # Ensure connection is established
+    get_db_connection()
     return render_template('profile.html', user=current_user)
 
 # JobPost model
@@ -84,19 +88,7 @@ class JobPost(Document):
 # Job listings route
 @app.route('/jobs')
 def job_listings():
-    get_db_connection()  # Ensure connection is established
-
-    # Example of adding a new job (you may want to remove this after testing)
-    post_job = JobPost(
-        title="Junior Dev",
-        company="Limpopo Connexion",
-        location="Johannesburg",
-        category="Technical",
-        description="Assist Teams with developing softwares and mobile apps",
-        salary=5000
-    )
-    post_job.save()
-
+    get_db_connection()
     location = request.args.get('location')
     category = request.args.get('category')
 
@@ -119,7 +111,7 @@ class Application(Document):
 @app.route('/apply/<job_id>', methods=['POST'])
 @login_required
 def apply_job(job_id):
-    get_db_connection()  # Ensure connection is established
+    get_db_connection()
     job = JobPost.objects(id=job_id).first()
     if job:
         application = Application(user=current_user, job=job)
@@ -130,7 +122,7 @@ def apply_job(job_id):
 # Mentorship route
 @app.route('/mentors')
 def mentors():
-    get_db_connection()  # Ensure connection is established
+    get_db_connection()
     mentors = User.objects(is_mentor=True)
     return render_template('mentors.html', mentors=mentors, user=current_user)
 
@@ -149,16 +141,7 @@ class UserCourseProgress(Document):
 # Courses route
 @app.route('/courses')
 def courses():
-    get_db_connection()  # Ensure connection is established
-
-    # Example of adding a new course (you may want to remove this after testing)
-    course = Course(
-        title="Software Engineer - Front-end",
-        description="This course provides you with the knowledge and exposes you to tools for developing websites effectively.",
-        duration=5
-    )
-    course.save()
-
+    get_db_connection()
     courses = Course.objects()
     return render_template('courses.html', courses=courses, user=current_user)
 
@@ -166,7 +149,7 @@ def courses():
 @app.route('/course/<course_id>')
 @login_required
 def course_detail(course_id):
-    get_db_connection()  # Ensure connection is established
+    get_db_connection()
     course = Course.objects(id=course_id).first()
     progress = UserCourseProgress.objects(user=current_user, course=course).first()
     return render_template('course_detail.html', course=course, progress=progress, user=current_user)
