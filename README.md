@@ -88,3 +88,21 @@ Forms & Validation: Secure form handling is integrated for user registration, lo
 /employer - Employer Resources: Employers can post jobs and connect with candidates.
 🌱 Our Mission
 At JobHubSA, we believe that everyone deserves a fair chance at a fulfilling career. Our platform is more than a job board; it’s a space where job seekers, mentors, and learners come together to find opportunities, support, and knowledge. We’re here to tackle the unemployment crisis by empowering individuals to take control of their professional lives.
+
+
+👥 Developers
+This platform was brought to life by a team of dedicated developers:
+
+Leeon Kariuki
+GitHub: alpine57
+Role:Backend developer
+
+[Developer Name 2]
+GitHub:
+Role: Frontend Developer
+
+[Developer Name 3]
+GitHub:
+LinkedIn
+Role: UI/UX Designer
+Each of these developers has contributed their unique skills to make JobHubSA a powerful and user-friendly platform for job seekers and employers alike. We’re proud to work together to tackle global unemployment and create meaningful opportunities for everyone.
