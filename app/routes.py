@@ -1,13 +1,14 @@
-# routes.py
 from flask import render_template, request, redirect, url_for, flash
 from flask_login import login_user, logout_user, current_user, login_required
 from . import app
 from .models import User, JobPost, Application, Course, UserCourseProgress
 from datetime import datetime
 
+# Updated index route
 @app.route('/')
-def home():
+def index():
     return render_template('index1.html')
+
 # Signup route
 @app.route('/signup', methods=['GET', 'POST'])
 def signup():
