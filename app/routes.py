@@ -96,3 +96,7 @@ def course_detail(course_id):
 def about():
     return render_template('about.html')  # Ensure you have about.html in your templates folder
 
+@app.errorhandler(500)
+def internal_error(error):
+    return render_template('500.html'), 500
+
