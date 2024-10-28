@@ -103,7 +103,12 @@ def contact():
 @app.route('/blog')
 def blog():
     return render_template('blog.html')  # Ensure blog.html exists in your templates folder
+
 @app.route('/find_job')
 def find_job():
     return render_template('find_job.html')  # Make sure 'find_job.html' exists
+
+@app.route('/employer')
+def employer():
+    return render_template('employer.html')  # Ensure 'employer.html' exists
 
