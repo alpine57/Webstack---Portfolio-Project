@@ -97,12 +97,12 @@ Leeon Kariuki
 GitHub: alpine57
 Role:Backend developer
 
-[Developer Name 2]
-GitHub:
-Role: Frontend Developer
+Itumeleng Malau
+GitHub:ItumelengRandyMalau
+Role:Bckend developer
 
-[Developer Name 3]
-GitHub:
-LinkedIn
-Role: UI/UX Designer
+Lawrence Mokoko
+GitHub:LawrenceWillie
+Role:Frontend developer
+
 Each of these developers has contributed their unique skills to make JobHubSA a powerful and user-friendly platform for job seekers and employers alike. We’re proud to work together to tackle global unemployment and create meaningful opportunities for everyone.
