@@ -147,13 +147,13 @@ body {
     }
 
 section #header-text {
-  padding: 20px;
-  background-color: #e6f0f1; 
-  overflow: hidden;
-  height: 100vh;
-  border-radius: 0 0 500px 0;
-  word-wrap: break-word;
-  overflow: hidden;
+      padding: 20px;
+      background-color: #e6f0f1; 
+      overflow: hidden;
+      height: 100vh;
+      border-radius: 0 0 500px 0;
+      word-wrap: break-word;
+      overflow: hidden;
 }
 
 section #textBox h1 {
@@ -218,7 +218,7 @@ section #image_box .image-container img {
 /* *****************Start home page**************** */
 /* ****************************Employee_Employer cards********************************/
 .row #Card_seeker {
-  padding: 15px;
+  padding: 10px;
 }
 .row #Card_seeker .container {
   position: relative;
@@ -226,7 +226,7 @@ section #image_box .image-container img {
   width: 80%;
   height: auto;
   background-color: #e6f0f1; 
-  padding: 20px;
+  padding: 7px;
   
   
 }
@@ -290,16 +290,103 @@ section #image_box .image-container img {
   
 }
 
-/********************LOGIN FORM*****************************/
+/********************Sign up Form*************************/
+.container #content1 .employe_yer_links {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+.container #content1 .employe_yer_links h4{
+  padding: 15px;
+  font-size: medium;
+  background-color: #69bb5e;
+  margin: 10px;
+  border-radius: 35px;
+}
+
+.container #content1 .employe_yer_links h4:hover {
+  cursor: pointer;
+}
+
+.container #content1 .employe_yer_links h4 a {
+  padding:5px;
+}
+#form_pic {
+  position: relative;
+  height: 100%;
+  display: block;
+  justify-content: center;
+  align-items: center;
+}
+
+#form_pic .text {
+  display: block;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
+#form_pic .pic_container {
+  position: relative;
+
+}
+
+#login_sin_row #form_pic .text h1{
+  font-weight: 900;
+  color: #3adb50;
+}
+/* #form_pic .pic_container img{
+  width: 100%;
+  height: auto;
+} */
+
+ #login_sin_row {
+    position: relative;
+    overflow-y: none;
+   background-image: url("images/login_f_pic.jpg");
+   background-attachment: fixed;
+   height: 100%;
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover;
+}
+
+
+#sign_up .container{
+  position: relative;
+  display: block;
+  align-items: center;
+  justify-content: center;
+  background-attachment: fixed;
+
+}
+#sign_up .container #content1 h2, #sign_up .container #content1 h4, #sign_up .container .login_text {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+#sign_up .container .form-container {
+  background-attachment: fixed;
+  overflow-y: scroll;
+  background-image: brown;
+}
+
+
+/* Hide all content by default */
 .row .form-container {
   position: relative;
   margin: 20px;
   padding: 20px;
-  background-image:  radial-gradient(rgb(255, 255, 255), rgb(228, 228, 217)); 
   color: white;
-  box-shadow: 0 15px 10px 0 rgb(0, 0, 0, 0.3), 0 7px 21px 0 rgb(0, 0, 0, 0.20);
-  border-radius: 20px;
-  height: auto;
+  border-radius: 35px;
+  height: 450px;
+
 }
 
 .row .form-container .input-cnt {
@@ -362,8 +449,12 @@ section #image_box .image-container img {
 
 .row .form-container .input-cnt .password{
   width: 100%;
-  border-top-left-radius: 20px;
-  border-bottom-left-radius: 20px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .row .form-container textarea {
@@ -378,8 +469,8 @@ section #image_box .image-container img {
   margin: 0 auto;
   font-size: 105%;
   padding: 8px;
-  color: #232425;
-  background: white;
+  color: #f1f1f1;
+  background: #3adb50;
   transition-duration: .5s;
 }
 
@@ -387,6 +478,67 @@ section #image_box .image-container img {
   color: white;
   background: #232425;
 } 
+/***************************PROFILE.HTML*********************/
+.row #profile_nav {
+ position: relative;
+ border: 2px solid ;
+ padding: 0;
+ height: 100vh;
+}
+
+.row #profile_nav .navigate{
+  height: 100%; 
+  width: 100%; 
+  position: relative; 
+  z-index: 1; 
+  background-color: #111;
+  overflow-x: hidden; 
+  padding-top: 20px;
+}
+
+.row #profile_nav .navigate a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 18px;
+  color: #818181;
+  display: block;
+}
+
+.row #profile_content{
+  position: relative;
+}
+
+.row #profile_content #jobs_cards{
+  position: relative;
+  margin: 10px; 
+  padding: 0px 10px;
+}
+
+ .row #profile_content #jobs_cards .card_j{   /***CARDS** */
+  position: relative;
+  border: 0.5px solid wheat;
+  padding: 0;
+  width: 270px;
+  height: auto;
+  text-align: center;
+  border-radius: 20px;
+  margin: 10px;
+}
+
+.row #profile_content #jobs_cards .card_j .title{ 
+  border-radius: 20px 20px 0 0;
+  padding: 10px;
+  position: relative;
+  background-color: #557c3e;
+  width: 100%;
+}
+
+.row #profile_nav .navigate a:hover {
+  color: #f1f1f1;
+}
+
+
+
 
 
 /* END HOME PAGE */
@@ -398,9 +550,10 @@ section #image_box .image-container img {
   margin-top: 30px;
   padding-top: 35px;
   padding-bottom: 30px;
-  background-color: #222;
-  color: rgb(238, 238, 238);
+  background-color: #fdfcfc;
+  color: rgb(24, 20, 20);
 }
+
 .panel-footer div.row {
   margin-bottom: 35px;
 }
@@ -550,6 +703,37 @@ a.active, a:hover {
 
 /********** Extra small devices only **********/
 @media (max-width: 767px) {
+  /* ***********profile.html navigation bar******** */
+  .row #profile_nav {
+    position: relative;
+    padding: 0;
+    height: 15vh;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+   }
+
+   .row #profile_nav .navigate  {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #818181;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    background-color: #8da4a7;
+
+  }
+
+  .row #profile_nav .navigate  ul {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+
+  }
 
   /* LOGO */
 
