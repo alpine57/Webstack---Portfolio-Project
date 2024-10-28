@@ -11,51 +11,67 @@
     <script src="js/script.js"></script>
 </head>
 <body>
-    <div class="row"> <!-------------LOgin form--------------------->
+    <div id="login_sin_row" class="row"> <!-------------LOgin form--------------------->
         <div id="form_pic" class="col-lg-6 col-md-12">
+          <!--  <h1>Hello</h1>
             <div class="pic_container">
                 <img src="images/login_f_pic.jpg" alt="image">
-            </div>
-           <p class="text">
-                <h1>
-                    JOIN OUR JOIN OUR
+            </div> -->
+           <p class="text" style="display: block;
+                                    justify-content:center;
+                                    align-items:center;
+           ">
+                <h1 style="
+                font-weight: 900; 
+                color:rgb(141, 164, 184);
+                font-size:50px
+                
+                ">
+                    JOIN OUR
                     COMMUNITY
                 </h1>
-                <h4>
-                    JOBJACK has thousands of job seekers looking for entry-level jobs - from waiters, cashiers,
+                <h4 style="
+                font-weight: 400; 
+                
+                ">
+                    JOBHUBSA has thousands of job seekers looking for entry-level jobs - from waiters, cashiers,
                     cleaners, drivers and factory workers on a permanent basis to general helpers,
                     marshals and barmen for a once-off event.
                 </h4>
-            </p> 
-
-        </div>
-        <div id="login_form" class="col-lg-6 col-md-12">
-            <!------------Log in form---------------------->
-            <div class="form-container">
-				<form method="post" action="#">
-					<div class="input-cnt">
-						<i id="name" class="fas fa-envelope"></i>
-						<input type="text" placeholder="email" name="email" >
-					</div>
-
-				<div class="input-cnt">
-					<i id="name" class="fas fa-lock"></i>
-					<input class="password" type="password" name="password" placeholder="Password" required>
-				</div>
-				<div  class="input-cnt">
-					<input id="updates" onclick="update()" type="submit" />
+            </p>
         
-                </div>
+        </div>
 
-				
-				</form>
+        <div id="sign_up" class="col-lg-6 col-md-12">
+            <!-- Sign_UP -->
+            <div class="container">
+                <div id="content1" class="content">
+                    <h2>JOBHUBSA</h2>
+                    <h4>Login to your account</h4>
+                    <div class="form-container">
+                        <form method="post" >
+                            <!-- <?php include('errors.php'); ?> -->
+                            <div class="input-cnt">
+                                <i id="name" class="fas fa-envelope"></i>
+                                <input type="text" name="Email" placeholder="Email" required>
+                            </div>
 
-                <div class="sign_field">
-                    <p>
-                        <a href="signup.html">Sign Up</a>
-                    </p>
+                            <div class="input-cnt">
+                                <i id="password" class="fas fa-lock"></i>
+                                <input class="password" type="password" name="password" placeholder="password" required>
+                            </div>
+
+                            <div class="input-cnt">
+                            <input onclick="update()" type="submit" />
+                            </div>
+                        
+                        </form>
+                    </div>    
                 </div>
-				</div>
+                <div class="login_text">
+                  <div style="font-size: small;">Register a New Account?</div><a style="font-size:large; padding:10px;" href="signup.html">Sign Up</a>
+                </div> 
+            </div>
         </div>
     </div>
 
