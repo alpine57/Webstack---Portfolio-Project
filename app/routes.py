@@ -3,6 +3,7 @@ from flask_login import login_user, logout_user, current_user, login_required
 from . import app
 from .models import User, JobPost, Application, Course, UserCourseProgress
 from datetime import datetime
+from flask_login import LoginManager
 
 login_manager = LoginManager()
 

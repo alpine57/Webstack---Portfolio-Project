@@ -7,7 +7,7 @@ from .models import User, JobPost, Application, Course, UserCourseProgress
 app = Flask(__name__)
 app.secret_key = 'supersecretkey'
 login_manager = LoginManager(app)
-login_manager.login_view = 'login'
+login_manager.init_app(app)
 
 # Connecting to MongoDB Atlas
 connect(db="jobhub_db", host="mongodb+srv://itumeleng:Itumeleng1.@cluster0.3klnl.mongodb.net/")
