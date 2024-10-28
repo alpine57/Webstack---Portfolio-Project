@@ -100,3 +100,7 @@ def about():
 def contact():
     return render_template('contact.html') 
 
+@app.route('/blog')
+def blog():
+    return render_template('blog.html')  # Ensure blog.html exists in your templates folder
+
