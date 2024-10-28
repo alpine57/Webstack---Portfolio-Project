@@ -92,3 +92,7 @@ def course_detail(course_id):
     progress = UserCourseProgress.objects(user=current_user, course=course).first()
     return render_template('course_detail.html', course=course, progress=progress, user=current_user)
 
+@app.route('/about')
+def about():
+    return render_template('about.html')  # Ensure you have about.html in your templates folder
+
