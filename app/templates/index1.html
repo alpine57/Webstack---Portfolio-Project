@@ -20,7 +20,7 @@
           </a>
           <label id="menu-bar" onclick="openNav()"><i class="fas fa-bars"></i></label>
           <div id="mySidenav" class="sidenav">
-            <a class="closebtn" onclick="closeNav()"><span>&times;close<span></a>
+            <a class="closebtn" onclick="closeNav()"><span>&times; Close</span></a>
             <ul>
                 <li class="active"><a href="{{ url_for('index') }}">Employers</a></li>
                 <li><a href="{{ url_for('about') }}">Job Seekers</a></li>
@@ -28,8 +28,8 @@
                 <li><a href="{{ url_for('blog') }}">Blog</a></li>
             </ul>
             <span class="em_em">
-              <span class="job_skr"><a href="{{ url_for('find_job') }}">find a job</a></span>
-              <span class="employer"><a href="{{ url_for('employer') }}">employer</a></span>
+              <span class="job_skr"><a href="{{ url_for('find_job') }}">Find a job</a></span>
+              <span class="employer"><a href="{{ url_for('employer') }}">Employer</a></span>
               <span class="login"><a href="{{ url_for('login') }}">Log in</a></span>
             </span>
           </div>
@@ -39,7 +39,7 @@
             <div id="textBox" class="col-lg-6 col-md-12">
               <h1 class="lg_text">Entry-level hiring made easy</h1>
               <p class="sm_text">
-                Find the best entry-level talent fast with<br> SAJOBHUB’s automated recruiting platform and integrated assessments
+                Find the best entry-level talent fast with<br> SAJOBHUB’s automated recruiting platform and integrated assessments.
               </p>
               <button class="demo">Request a demo</button>
             </div>
@@ -65,7 +65,7 @@
     <div class="row">
         <div id="Card_seeker" class="col-lg-6 col-md-12">
             <div class="container">
-              <span class="top_botton"><a href="">for job seekers</a></span>
+              <span class="top_botton"><a href="">For Job Seekers</a></span>
               <div class="img_1st_container">
                 <div class="image_container">
                   <img src="{{ url_for('static', filename='images/prsn_laptp.png') }}" alt="image">
@@ -79,9 +79,9 @@
               <div class="the_btn"><button><a href="">Find a job</a></button></div>
             </div>
         </div>
-        <div id="Card_seeker" class="col-lg-6 col-md-12">
+        <div id="Card_employer" class="col-lg-6 col-md-12">
             <div class="container">
-              <span class="top_botton"><a href="">For employers</a></span>
+              <span class="top_botton"><a href="">For Employers</a></span>
               <div class="img_1st_container">
                 <div class="image_container">
                   <img src="{{ url_for('static', filename='images/prsn_sitting.png') }}" alt="image">
