@@ -21,7 +21,7 @@
             </h1>
             <h4 style="font-weight: 400;">
                 JOBHUBSA has thousands of job seekers looking for entry-level jobs - from waiters, cashiers,
-                cleaners, drivers and factory workers on a permanent basis to general helpers,
+                cleaners, drivers, and factory workers on a permanent basis to general helpers,
                 marshals, and barmen for a once-off event.
             </h4>
         </div>
@@ -32,17 +32,17 @@
                     <h2>JOBHUBSA</h2>
                     <h4>Login to your account</h4>
                     <div class="form-container">
-                        <form method="post">
+                        <form action="{{ url_for('login') }}" method="post">
                             <div class="input-cnt">
                                 <i id="name" class="fas fa-envelope"></i>
-                                <input type="text" name="Email" placeholder="Email" required>
+                                <input type="text" name="email" placeholder="Email" required>
                             </div>
                             <div class="input-cnt">
                                 <i id="password" class="fas fa-lock"></i>
-                                <input class="password" type="password" name="password" placeholder="password" required>
+                                <input class="password" type="password" name="password" placeholder="Password" required>
                             </div>
                             <div class="input-cnt">
-                                <input onclick="update()" type="submit" />
+                                <input type="submit" value="Login" />
                             </div>
                         </form>
                     </div>
