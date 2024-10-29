@@ -9,8 +9,6 @@ login_manager = LoginManager()
 
 @app.route('/')
 def index():
-    if not current_user.is_authenticated:
-        return redirect(url_for('login'))
     return render_template('index1.html')
 
 
