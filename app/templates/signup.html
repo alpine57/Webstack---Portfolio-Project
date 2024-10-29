@@ -7,7 +7,7 @@
     
     <!-- Flask-compatible links for static CSS files -->
     <link href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css') }}" type="text/css" rel="stylesheet">
-    <link rel="stylesheet" href="{{ url_for('static', filename='fontAwesome/css/all.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='fontAwesome/css/all.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     
     <title>Sign Up</title>
@@ -28,39 +28,40 @@
             <div class="container">
                 <div id="content1" class="content">
                     <div class="employe_yer_links">
-                        <h4 class="seeker"><a href="{{ url_for('static', filename='signup.html') }}">Job Seekers</a></h4>
-                        <h4 class="employer"><a href="{{ url_for('static', filename='employer.html') }}">Employers</a></h4>
+                        <h4 class="seeker"><a href="{{ url_for('signup') }}">Job Seekers</a></h4>
+                        <h4 class="employer"><a href="{{ url_for('employer') }}">Employers</a></h4>
                     </div>
                     <div class="form-container">
                         <form method="post">
+                            {{ csrf_token() }}
                             <!-- Form Fields -->
                             <div class="input-cnt">
-                                <i id="name" class="fas fa-user"></i>
-                                <input type="text" name="first_name" placeholder="First Name" required>
+                                <i class="fas fa-user"></i>
+                                <input type="text" id="first_name" name="first_name" placeholder="First Name" required>
                             </div>
                             <div class="input-cnt">
-                                <i id="name" class="fas fa-user"></i>
-                                <input type="text" name="last_name" placeholder="Last Name" required>
+                                <i class="fas fa-user"></i>
+                                <input type="text" id="last_name" name="last_name" placeholder="Last Name" required>
                             </div>
                             <div class="input-cnt">
-                                <i id="name" class="fas fa-user"></i>
-                                <input type="text" name="username" placeholder="Username" required>
+                                <i class="fas fa-user"></i>
+                                <input type="text" id="username" name="username" placeholder="Username" required>
                             </div>
                             <div class="input-cnt">
-                                <i id="email" class="fas fa-envelope"></i>
-                                <input type="email" name="email" placeholder="Email" required>
+                                <i class="fas fa-envelope"></i>
+                                <input type="email" id="email" name="email" placeholder="Email" required>
                             </div>
                             <div class="input-cnt">
-                                <i id="password" class="fas fa-key"></i>
-                                <input type="password" name="password" placeholder="Password" required>
+                                <i class="fas fa-key"></i>
+                                <input type="password" id="password" name="password" placeholder="Password" required>
                             </div>
                             <div class="input-cnt">
-                                <i id="confirm_password" class="fas fa-key"></i>
-                                <input type="password" name="confirm_password" placeholder="Confirm Password" required>
+                                <i class="fas fa-key"></i>
+                                <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirm Password" required>
                             </div>
                             <div class="input-cnt">
-                                <i id="phone" class="fas fa-phone"></i>
-                                <input type="text" name="cellphone" placeholder="0783365852">
+                                <i class="fas fa-phone"></i>
+                                <input type="text" id="phone" name="cellphone" placeholder="0783365852">
                             </div>
                             <div class="input-cnt">
                                 <input type="submit" value="Sign Up">
@@ -70,7 +71,7 @@
                 </div>
                 <div class="login_text">
                     <div style="font-size: small;">Already have an account?</div>
-                    <a style="font-size: large; padding: 10px;" href="{{ url_for('static', filename='login.html') }}">Log in</a>
+                    <a style="font-size: large; padding: 10px;" href="{{ url_for('login') }}">Log in</a>
                 </div> 
             </div>
         </div>
