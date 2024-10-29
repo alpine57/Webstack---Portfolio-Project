@@ -14,16 +14,19 @@ def index():
     return render_template('index1.html')
 
 
-# Signup route
 @app.route('/signup', methods=['GET', 'POST'])
 def signup():
     if request.method == 'POST':
         data = request.form
-        user = User(username=data['username'], email=data['email'])
-        user.set_password(data['password'])
-        user.save()
-        login_user(user)
-        return redirect(url_for('profile'))
+        try:
+            user = User(username=data['username'], email=data['email'])
+            user.set_password(data['password'])
+            user.save()
+            login_user(user)
+            return redirect(url_for('profile'))
+        except Exception as e:
+            flash("An error occurred while creating your account. Please try again.")
+            print(e)  # Log the error to the console for debugging
     return render_template('signup.html', user=current_user)
 
 # Login route
